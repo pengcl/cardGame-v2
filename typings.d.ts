@@ -1,6 +1,6 @@
 /// <reference types="zone.js" />
 /// <reference types="@types/meteor" />
-/// <reference types="@types/underscore" />
+// <reference types="@types/underscore" />
 /// <reference types="@types/chai" />
 /// <reference types="@types/mocha" />
 
@@ -31,12 +31,10 @@ declare module "*.sass" {
 
 declare module 'meteor/tmeasday:publish-counts' {
     import {Mongo} from 'meteor/mongo';
-    
     interface CountsObject {
         get(publicationName: string): number;
-        publish(context: any, publicationName: string, cursor: Mongo.Cursor, options: any): number;
+        publish(context: any, publicationName: string, cursor: Mongo.Cursor<any>, options: any): number;
     }
-
     export const Counts: CountsObject;
 }
 
@@ -44,7 +42,7 @@ declare module "meteor/hwillson:stub-collections" {
     import {Mongo} from "meteor/mongo";
 
     interface IStubCollections {
-        stub(collection: Mongo.Collection);
+        stub(collection: Mongo.Collection<any>);
         restore();
     }
 

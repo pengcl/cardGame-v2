@@ -1,0 +1,17 @@
+<div>
+    <!--<parties-form style="float: left"></parties-form>-->
+
+    <input type="text" #searchtext placeholder="Search by Location">
+
+    <button type="button" (click)="search(searchtext.value)">Search</button>
+    <login-buttons></login-buttons>
+
+    <ul>
+        <li *ngFor="let player of players | async">
+            <a [routerLink]="['/player', player._id]">{{player.name}}</a>
+            <p>{{player.description}}</p>
+            <p>{{player.location}}</p>
+            <button (click)="removeParty(player)">X</button>
+        </li>
+    </ul>
+</div>

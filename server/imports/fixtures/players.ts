@@ -3,97 +3,37 @@ import {Player} from '../../../both/models/player.model';
 
 export function loadPlayers() {
     if (Players.find().cursor.count() === 0) {
-        const players: Player[] = [
-            {
-                name: 'baJor',
-                nationality: 'italy',
-                weight: 70,
-                birthday: '20170506',
-                height: 178,
-                club: 'AC Milan',
-                uniformNo: 10,
-                position: [
-                    {
-                        name: 'CM',
-                        score: 99
-                    },
-                    {
-                        name: 'CM',
-                        score: 99
-                    }
-                ],
-                star: 3,
-                level: 1,
-                ability: {
-                    attack: 93,
-                    defense: 35,
-                    speed: 80,
-                    skill: 99,
-                    strength: 81,
-                    spirit: 93
-                }
-            },
-            {
-                name: 'Maldini',
-                nationality: 'italy',
-                weight: 70,
-                birthday: '20170506',
-                height: 178,
-                club: 'AC Milan',
-                uniformNo: 10,
-                position: [
-                    {
-                        name: 'CM',
-                        score: 99
-                    },
-                    {
-                        name: 'CM',
-                        score: 99
-                    }
-                ],
-                star: 3,
-                level: 1,
-                ability: {
-                    attack: 93,
-                    defense: 35,
-                    speed: 80,
-                    skill: 99,
-                    strength: 81,
-                    spirit: 93
-                }
-            },
-            {
-                name: 'inzaji',
-                nationality: 'italy',
-                weight: 70,
-                birthday: '20170506',
-                height: 178,
-                club: 'AC Milan',
-                uniformNo: 10,
-                position: [
-                    {
-                        name: 'CM',
-                        score: 99
-                    },
-                    {
-                        name: 'CM',
-                        score: 99
-                    }
-                ],
-                star: 3,
-                level: 1,
-                ability: {
-                    attack: 93,
-                    defense: 35,
-                    speed: 80,
-                    skill: 99,
-                    strength: 81,
-                    spirit: 93
-                }
-            }
-        ];
 
-        players.forEach((player: Player) => Players.insert(player));
+        for (var i = 0; i < 27; i++) {
+            Players.insert({
+                name: Fake.sentenceS(12),
+                nationality: Fake.sentenceS(12),
+                weight: Fake.sentenceN(2),
+                birthday: Fake.sentenceS(12),
+                height: Fake.sentenceN(3),
+                club: Fake.sentenceS(12),
+                uniformNo: Fake.sentenceN(2),
+                position: [
+                    {
+                        name: 'CM',
+                        score: Fake.sentenceN(2)
+                    },
+                    {
+                        name: 'CM',
+                        score: Fake.sentenceN(2)
+                    }
+                ],
+                star: Fake.sentenceN(1),
+                level: Fake.sentenceN(1),
+                ability: {
+                    attack: Fake.sentenceN(2),
+                    defense: Fake.sentenceN(2),
+                    speed: Fake.sentenceN(2),
+                    skill: Fake.sentenceN(2),
+                    strength: Fake.sentenceN(2),
+                    spirit: Fake.sentenceN(2)
+                }
+            });
+        }
     }
-
 }
