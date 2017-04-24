@@ -138,6 +138,5 @@ declare namespace Chai {
 }
 
 declare var Fake: {
-    sentenceN(words: number): number;
-    sentenceS(words: number): string;
+    sentence(words: number): number;
 };

@@ -6,32 +6,32 @@ export function loadPlayers() {
 
         for (var i = 0; i < 27; i++) {
             Players.insert({
-                name: Fake.sentenceS(12),
-                nationality: Fake.sentenceS(12),
-                weight: Fake.sentenceN(2),
-                birthday: Fake.sentenceS(12),
-                height: Fake.sentenceN(3),
-                club: Fake.sentenceS(12),
-                uniformNo: Fake.sentenceN(2),
+                name: 'name' + Fake.sentence(1),
+                nationality: 'nationality' + Fake.sentence(1),
+                weight: Fake.sentence(2),
+                birthday: 'birthday' + Fake.sentence(12),
+                height: Fake.sentence(3),
+                club: 'club' + Fake.sentence(12),
+                uniformNo: Fake.sentence(2),
                 position: [
                     {
                         name: 'CM',
-                        score: Fake.sentenceN(2)
+                        score: Fake.sentence(2)
                     },
                     {
                         name: 'CM',
-                        score: Fake.sentenceN(2)
+                        score: Fake.sentence(2)
                     }
                 ],
-                star: Fake.sentenceN(1),
-                level: Fake.sentenceN(1),
+                star: Fake.sentence(1),
+                level: Fake.sentence(1),
                 ability: {
-                    attack: Fake.sentenceN(2),
-                    defense: Fake.sentenceN(2),
-                    speed: Fake.sentenceN(2),
-                    skill: Fake.sentenceN(2),
-                    strength: Fake.sentenceN(2),
-                    spirit: Fake.sentenceN(2)
+                    attack: Fake.sentence(2),
+                    defense: Fake.sentence(2),
+                    speed: Fake.sentence(2),
+                    skill: Fake.sentence(2),
+                    strength: Fake.sentence(2),
+                    spirit: Fake.sentence(2)
                 }
             });
         }
