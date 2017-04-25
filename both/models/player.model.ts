@@ -12,6 +12,9 @@ export interface Player extends CollectionObject {
     position: Position[];
     star: number;
     level: number;
+    type: string;
+    tag: string;
+    description: string;
     ability: {
         attack: number;
         defense: number;

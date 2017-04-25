@@ -3,8 +3,8 @@ import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 import {MeteorObservable} from 'meteor-rxjs';
 
-import {Players} from '../../../../both/collections/players.collection';
-import {Player} from '../../../../both/models/player.model';
+import {Players} from '../../../../../both/collections/players.collection';
+import {Player} from '../../../../../both/models/player.model';
 
 import template from './players-list.component.html';
 
@@ -13,11 +13,12 @@ import template from './players-list.component.html';
     template
 })
 
-export class PartiesListComponent implements OnInit, OnDestroy {
+export class PlayersListComponent implements OnInit, OnDestroy {
     players: Observable<Player[]>;
     playersSub: Subscription;
 
     ngOnInit() {
+        Meteor.subscribe('players');
         this.players = Players.find({}).zone();
         this.playersSub = MeteorObservable.subscribe('players').subscribe();
     }
@@ -27,12 +28,12 @@ export class PartiesListComponent implements OnInit, OnDestroy {
     }
 
     search(value: string): void {
-
+        console.log(Players.find({}));
         this.players = Players.find(value ? {location: value} : {}).zone();
 
     }
 
     ngOnDestroy() {
-        this.playersSub.unsubscribe();
+        //this.playersSub.unsubscribe();
     }
 }
