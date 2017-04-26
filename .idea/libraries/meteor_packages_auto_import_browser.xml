@@ -2,6 +2,8 @@
   <library name="meteor-packages-auto-import-browser" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-config.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-server.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/utils.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/hook.timeout.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/mocha.js" />
@@ -33,7 +35,6 @@
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/reporters/base.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/reporters/markdown.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/reporters/tap.js" />
-        <item url="file://$USER_HOME$/.meteor/packages/tmeasday_publish-counts/0.8.0/web.browser/client/publish-counts.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/reporters/json-stream.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/reporters/json-cov.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/reporters/landing.js" />
@@ -99,6 +100,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/underscore/1.0.10/web.browser/underscore.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.3.3/web.browser/email_tests_setup.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.3.3/web.browser/email_templates.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/jalik_ufs-gridfs/0.2.1/web.browser/ufs-gridfs.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.3.3/web.browser/email_tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/binary-heap/1.0.10/web.browser/min-heap.js" />
         <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.3.3/web.browser/password_tests_setup.js" />
@@ -333,16 +335,24 @@
         <item url="file://$USER_HOME$/.meteor/packages/barbatus_css-compiler/0.4.1/web.browser/compilers/style_compiler.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/globals.js" />
         <item url="file://$USER_HOME$/.meteor/packages/barbatus_css-compiler/0.4.1/web.browser/compilers/less_compiler.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/update.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/fs.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/remove.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/context.js" />
         <item url="file://$USER_HOME$/.meteor/packages/logging/1.1.16/web.browser/logging_cordova.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/collection-hooks.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/utils.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/insert.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/root.js" />
         <item url="file://$USER_HOME$/.meteor/packages/logging/1.1.16/web.browser/logging_test.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/find.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/test.coffee" />
         <item url="file://$USER_HOME$/.meteor/packages/logging/1.1.16/web.browser/logging.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/users-compat.js" />
         <item url="file://$USER_HOME$/.meteor/packages/launch-screen/1.1.0/web.browser/mobile-launch-screen.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/upsert.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/timeout.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/findone.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/required-tokens.js" />
         <item url="file://$USER_HOME$/.meteor/packages/launch-screen/1.1.0/web.browser/default-behavior.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/duration.js" />
@@ -359,16 +369,27 @@
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/browser/array.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/browser/grep.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/browser/stack-trace.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-store.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/browser/ui.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/browser/large.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-store-permissions.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-tokens.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/jsapi/index.js" />
         <item url="file://$USER_HOME$/.meteor/packages/barbatus_caching-compiler/1.1.9/web.browser/caching-compiler.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-uploader.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/hook.sync.nested.js" />
         <item url="file://$USER_HOME$/.meteor/packages/barbatus_caching-compiler/1.1.9/web.browser/multi-file-caching-compiler.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-methods.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-mime.js" />
         <item url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/hook.async.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-template-helpers.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-filter.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-config.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-server.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/utils.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/hook.timeout.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/mocha.js" />
@@ -400,7 +421,6 @@
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/reporters/base.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/reporters/markdown.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/reporters/tap.js" />
-      <root url="file://$USER_HOME$/.meteor/packages/tmeasday_publish-counts/0.8.0/web.browser/client/publish-counts.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/reporters/json-stream.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/reporters/json-cov.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/lib/reporters/landing.js" />
@@ -466,6 +486,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/underscore/1.0.10/web.browser/underscore.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.3.3/web.browser/email_tests_setup.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.3.3/web.browser/email_templates.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/jalik_ufs-gridfs/0.2.1/web.browser/ufs-gridfs.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.3.3/web.browser/email_tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/binary-heap/1.0.10/web.browser/min-heap.js" />
       <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.3.3/web.browser/password_tests_setup.js" />
@@ -700,16 +721,24 @@
       <root url="file://$USER_HOME$/.meteor/packages/barbatus_css-compiler/0.4.1/web.browser/compilers/style_compiler.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/globals.js" />
       <root url="file://$USER_HOME$/.meteor/packages/barbatus_css-compiler/0.4.1/web.browser/compilers/less_compiler.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/update.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/fs.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/remove.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/context.js" />
       <root url="file://$USER_HOME$/.meteor/packages/logging/1.1.16/web.browser/logging_cordova.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/collection-hooks.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/utils.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/insert.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/root.js" />
       <root url="file://$USER_HOME$/.meteor/packages/logging/1.1.16/web.browser/logging_test.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/find.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/test.coffee" />
       <root url="file://$USER_HOME$/.meteor/packages/logging/1.1.16/web.browser/logging.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/users-compat.js" />
       <root url="file://$USER_HOME$/.meteor/packages/launch-screen/1.1.0/web.browser/mobile-launch-screen.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/upsert.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/timeout.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/matb33_collection-hooks/0.8.4/web.browser/findone.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/required-tokens.js" />
       <root url="file://$USER_HOME$/.meteor/packages/launch-screen/1.1.0/web.browser/default-behavior.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/acceptance/duration.js" />
@@ -726,13 +755,22 @@
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/browser/array.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/browser/grep.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/browser/stack-trace.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-store.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/browser/ui.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/browser/large.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-store-permissions.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-tokens.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/jsapi/index.js" />
       <root url="file://$USER_HOME$/.meteor/packages/barbatus_caching-compiler/1.1.9/web.browser/caching-compiler.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-uploader.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/hook.sync.nested.js" />
       <root url="file://$USER_HOME$/.meteor/packages/barbatus_caching-compiler/1.1.9/web.browser/multi-file-caching-compiler.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-methods.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-mime.js" />
       <root url="file://$USER_HOME$/.meteor/packages/practicalmeteor_mocha/2.4.5_6/web.browser/test/hook.async.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-template-helpers.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/jalik_ufs/0.7.4_1/web.browser/ufs-filter.js" />
     </CLASSES>
     <SOURCES />
   </library>
