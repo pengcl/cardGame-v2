@@ -1,0 +1,88 @@
+<form [formGroup]="addForm" (ngSubmit)="addParty()">
+    this.addForm = this.formBuilder.group({
+    name: ['', Validators.required],
+    nationality: ['', Validators.required],
+    weight: [],
+    birthday: [],
+    height: [],
+    club: ['', Validators.required],
+    uniformNo: [],
+    position: ['', Validators.required],
+    star: ['', Validators.required],
+    level: ['', Validators.required],
+    type: ['', Validators.required],
+    tag: ['', Validators.required],
+    description: [],
+    ability: {
+    attack: ['', Validators.required],
+    defense: ['', Validators.required],
+    speed: ['', Validators.required],
+    skill: ['', Validators.required],
+    strength: ['', Validators.required],
+    spirit: ['', Validators.required],
+    },
+    createdAt: [],
+    owner: [],
+    baseId: []
+    });
+    <label>Name</label>
+    <input type="text" formControlName="name">
+
+    <label>nationality</label>
+    <input type="text" formControlName="nationality">
+
+    <label>weight</label>
+    <input type="text" formControlName="weight">
+
+    <label>birthday</label>
+    <input type="text" formControlName="birthday">
+
+    <label>height</label>
+    <input type="text" formControlName="height">
+
+    <label>club</label>
+    <input type="text" formControlName="club">
+
+    <label>uniformNo</label>
+    <input type="text" formControlName="uniformNo">
+
+    <label>position</label>
+    <input type="text" formControlName="position">
+
+    <label>star</label>
+    <input type="text" formControlName="star">
+
+    <label>level</label>
+    <input type="text" formControlName="level">
+
+    <label>type</label>
+    <input type="text" formControlName="type">
+
+    <label>tag</label>
+    <input type="text" formControlName="tag">
+
+    <label>description</label>
+    <input type="text" formControlName="description">
+
+    <formset>
+        <label>attack</label>
+        <input type="text" formControlName="attack">
+
+        <label>defense</label>
+        <input type="text" formControlName="defense">
+
+        <label>speed</label>
+        <input type="text" formControlName="speed">
+
+        <label>skill</label>
+        <input type="text" formControlName="skill">
+
+        <label>strength</label>
+        <input type="text" formControlName="strength">
+
+        <label>spirit</label>
+        <input type="text" formControlName="spirit">
+    </formset>
+
+    <button type="submit">Add</button>
+</form>

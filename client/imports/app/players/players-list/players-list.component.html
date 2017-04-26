@@ -1,0 +1,31 @@
+<header>
+
+    <h1>Player List ( <!--{{$ctrl.incompleteCount}}--> )</h1>
+
+    <label class="hide-completed">
+
+        <input type="checkbox" ng-model="$ctrl.hideCompleted"/>
+
+        Hide Completed Tasks
+
+    </label>
+
+    <login-buttons></login-buttons>
+
+    <form class="new-task">
+
+        <input #searchtext type="text" name="text" placeholder="Search by name"/>
+        <button type="button" (click)="search(searchtext.value)">Search</button>
+    </form>
+</header>
+<div>
+    <!--<parties-form style="float: left"></parties-form>-->
+
+    <ul>
+        <li *ngFor="let player of players | async">
+            <button class="delete" (click)="removeParty(player)">&times;</button>
+            <input type="checkbox" ng-checked="task.checked" ng-click="$ctrl.setChecked(task)" class="toggle-checked"/>
+            <a class="text" [routerLink]="['/player', player._id]">{{player.name}}</a>
+        </li>
+    </ul>
+</div>
