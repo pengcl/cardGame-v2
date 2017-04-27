@@ -15,30 +15,21 @@ import {PARTIES_DECLARATIONS} from './parties';
 @NgModule({
 
     imports: [
-
         BrowserModule,
-
         FormsModule,
-
         ReactiveFormsModule,
         RouterModule.forRoot(routes),
-
         AccountsModule,
-
     ],
 
     declarations: [
-
         AppComponent,
         ...PARTIES_DECLARATIONS,
         ...PLAYERS_DECLARATIONS
-
     ],
 
     bootstrap: [
-
         AppComponent
-
     ]
 
 })

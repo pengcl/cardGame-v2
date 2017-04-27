@@ -97,6 +97,9 @@ header .hide-completed {
 .toggle-private {
   margin-left: 5px;
 }
+.pure-g > li {
+  box-sizing: border-box;
+}
 @media (max-width: 600px) {
   li {
     padding: 12px 15px;

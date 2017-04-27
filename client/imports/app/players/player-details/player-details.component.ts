@@ -28,7 +28,7 @@ export class PlayerDetailsComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.route.params
-            .map(params => params['partyId'])
+            .map(params => params['playerId'])
             .subscribe(playerId => {
                 this.playerId = playerId;
 
@@ -36,8 +36,9 @@ export class PlayerDetailsComponent implements OnInit, OnDestroy {
                     this.playerSub.unsubscribe();
                 }
 
-                this.playerSub = MeteorObservable.subscribe('party', this.playerId).subscribe(() => {
+                this.playerSub = MeteorObservable.subscribe('player', this.playerId).subscribe(() => {
                     this.player = Players.findOne(this.playerId);
+                    console.log(this.player);
                 });
             });
     }
@@ -57,8 +58,8 @@ export class PlayerDetailsComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.paramsSub.unsubscribe();
-        this.playerSub.unsubscribe();
+        /*this.paramsSub.unsubscribe();
+        this.playerSub.unsubscribe();*/
     }
 
 }

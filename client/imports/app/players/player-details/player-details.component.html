@@ -1,22 +1,102 @@
-<form *ngIf="party" (submit)="saveParty()">
+<header>
 
-    <label>Name</label>
+    <h1>Player List ( <!--{{$ctrl.incompleteCount}}--> )</h1>
 
-    <input type="text" [(ngModel)]="party.name" name="name">
+    <label class="hide-completed">
 
+        <input type="checkbox" ng-model="$ctrl.hideCompleted"/>
 
-    <label>Description</label>
+        Hide Completed Tasks
 
-    <input type="text" [(ngModel)]="party.description" name="description">
+    </label>
 
+    <login-buttons></login-buttons>
 
-    <label>Location</label>
+    <form class="new-task">
 
-    <input type="text" [(ngModel)]="party.location" name="location">
+        <input #searchtext type="text" name="text" placeholder="Search by name"/>
+        <button type="button" (click)="search(searchtext.value)">Search</button>
+    </form>
+</header>
+<form *ngIf="player" (ngSubmit)="savePlayer()">
+    <ul class="pure-g">
+        <li class="pure-u-1-2">
+            <label>Name</label>
+            <input type="text" [(ngModel)]="player.name" name="name">
+        </li>
+        <li class="pure-u-1-2">
+            <label>nationality</label>
+            <input type="text" [(ngModel)]="player.nationality" name="nationality">
+        </li>
+        <li class="pure-u-1-2">
+            <label>weight</label>
+            <input type="text" [(ngModel)]="player.weight" name="weight">
+        </li>
+        <li class="pure-u-1-2">
+            <label>birthday</label>
+            <input type="text" [(ngModel)]="player.birthday" name="birthday">
+        </li>
+        <li class="pure-u-1-2">
+            <label>height</label>
+            <input type="text" [(ngModel)]="player.height" name="height">
+        </li>
+        <li class="pure-u-1-2">
+            <label>club</label>
+            <input type="text" [(ngModel)]="player.club" name="club">
+        </li>
+        <li class="pure-u-1-2">
+            <label>uniformNo</label>
+            <input type="text" [(ngModel)]="player.uniformNo" name="uniformNo">
+        </li>
+        <li class="pure-u-1-2">
+            <label>position</label>
+            <input type="text" [(ngModel)]="player.position" name="position">
+        </li>
+        <li class="pure-u-1-2">
+            <label>star</label>
+            <input type="text" [(ngModel)]="player.star" name="star">
+        </li>
+        <li class="pure-u-1-2">
+            <label>level</label>
+            <input type="text" [(ngModel)]="player.level" name="level">
+        </li>
+        <li class="pure-u-1-2">
+            <label>type</label>
+            <input type="text" [(ngModel)]="player.type" name="type">
+        </li>
+        <li class="pure-u-1-2">
+            <label>tag</label>
+            <input type="text" [(ngModel)]="player.tag" name="tag">
+        </li>
+        <li class="pure-u-1-2">
+            <label>description</label>
+            <input type="text" [(ngModel)]="player.description" name="description">
+        </li>
+        <li class="pure-u-1-2">
+            <label>attack</label>
+            <input type="text" [(ngModel)]="player.attack" name="attack">
+        </li>
+        <li class="pure-u-1-2">
+            <label>defense</label>
+            <input type="text" [(ngModel)]="player.defense" name="defense">
+        </li>
+        <li class="pure-u-1-2">
+            <label>speed</label>
+            <input type="text" [(ngModel)]="player.speed" name="speed">
+        </li>
+        <li class="pure-u-1-2">
+            <label>skill</label>
+            <input type="text" [(ngModel)]="player.skill" name="skill">
+        </li>
+        <li class="pure-u-1-2">
+            <label>strength</label>
+            <input type="text" [(ngModel)]="player.strength" name="strength">
+        </li>
+        <li class="pure-u-1-2">
+            <label>spirit</label>
+            <input type="text" [(ngModel)]="player.spirit" name="spirit">
+        </li>
+    </ul>
 
-
-    <button type="submit">Save</button>
-
-    <a [routerLink]="['/']">Cancel</a>
-
+    <button type="submit">Add</button>
 </form>
