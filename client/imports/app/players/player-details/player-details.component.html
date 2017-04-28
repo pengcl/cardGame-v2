@@ -1,12 +1,12 @@
 <header>
 
-    <h1>Player List ( <!--{{$ctrl.incompleteCount}}--> )</h1>
+    <h1>球员详情</h1>
 
     <label class="hide-completed">
 
         <input type="checkbox" ng-model="$ctrl.hideCompleted"/>
 
-        Hide Completed Tasks
+        隐藏属性
 
     </label>
 
@@ -21,80 +21,80 @@
 <form *ngIf="player" (ngSubmit)="savePlayer()">
     <ul class="pure-g">
         <li class="pure-u-1-2">
-            <label>Name</label>
+            <label>姓名</label>
             <input type="text" [(ngModel)]="player.name" name="name">
         </li>
         <li class="pure-u-1-2">
-            <label>nationality</label>
+            <label>国籍</label>
             <input type="text" [(ngModel)]="player.nationality" name="nationality">
         </li>
         <li class="pure-u-1-2">
-            <label>weight</label>
+            <label>体重</label>
             <input type="text" [(ngModel)]="player.weight" name="weight">
         </li>
         <li class="pure-u-1-2">
-            <label>birthday</label>
+            <label>生日</label>
             <input type="text" [(ngModel)]="player.birthday" name="birthday">
         </li>
         <li class="pure-u-1-2">
-            <label>height</label>
+            <label>身高</label>
             <input type="text" [(ngModel)]="player.height" name="height">
         </li>
         <li class="pure-u-1-2">
-            <label>club</label>
+            <label>俱乐部</label>
             <input type="text" [(ngModel)]="player.club" name="club">
         </li>
         <li class="pure-u-1-2">
-            <label>uniformNo</label>
+            <label>球衣号码</label>
             <input type="text" [(ngModel)]="player.uniformNo" name="uniformNo">
         </li>
         <li class="pure-u-1-2">
-            <label>position</label>
+            <label>位置</label>
             <input type="text" [(ngModel)]="player.position" name="position">
         </li>
         <li class="pure-u-1-2">
-            <label>star</label>
+            <label>星级</label>
             <input type="text" [(ngModel)]="player.star" name="star">
         </li>
         <li class="pure-u-1-2">
-            <label>level</label>
+            <label>等级</label>
             <input type="text" [(ngModel)]="player.level" name="level">
         </li>
         <li class="pure-u-1-2">
-            <label>type</label>
+            <label>类型</label>
             <input type="text" [(ngModel)]="player.type" name="type">
         </li>
         <li class="pure-u-1-2">
-            <label>tag</label>
+            <label>标签</label>
             <input type="text" [(ngModel)]="player.tag" name="tag">
         </li>
         <li class="pure-u-1-2">
-            <label>description</label>
+            <label>简介</label>
             <input type="text" [(ngModel)]="player.description" name="description">
         </li>
         <li class="pure-u-1-2">
-            <label>attack</label>
-            <input type="text" [(ngModel)]="player.attack" name="attack">
+            <label>进攻</label>
+            <input type="text" [(ngModel)]="player.ability.attack" name="attack">
         </li>
         <li class="pure-u-1-2">
-            <label>defense</label>
-            <input type="text" [(ngModel)]="player.defense" name="defense">
+            <label>防御</label>
+            <input type="text" [(ngModel)]="player.ability.defense" name="defense">
         </li>
         <li class="pure-u-1-2">
-            <label>speed</label>
-            <input type="text" [(ngModel)]="player.speed" name="speed">
+            <label>速度</label>
+            <input type="text" [(ngModel)]="player.ability.speed" name="speed">
         </li>
         <li class="pure-u-1-2">
-            <label>skill</label>
-            <input type="text" [(ngModel)]="player.skill" name="skill">
+            <label>技术</label>
+            <input type="text" [(ngModel)]="player.ability.skill" name="skill">
         </li>
         <li class="pure-u-1-2">
-            <label>strength</label>
-            <input type="text" [(ngModel)]="player.strength" name="strength">
+            <label>力量</label>
+            <input type="text" [(ngModel)]="player.ability.strength" name="strength">
         </li>
         <li class="pure-u-1-2">
-            <label>spirit</label>
-            <input type="text" [(ngModel)]="player.spirit" name="spirit">
+            <label>精神</label>
+            <input type="text" [(ngModel)]="player.ability.spirit" name="spirit">
         </li>
     </ul>
 
