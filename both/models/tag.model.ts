@@ -1,4 +1,4 @@
 export interface Tag {
-    code: string;
-    name: string;
+    en: string;
+    cn: string;
 }

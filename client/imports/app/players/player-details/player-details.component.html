@@ -48,9 +48,12 @@
             <label>球衣号码</label>
             <input type="text" [(ngModel)]="player.uniformNo" name="uniformNo">
         </li>
-        <li class="pure-u-1-2">
-            <label>位置</label>
-            <input type="text" [(ngModel)]="player.position" name="position">
+        <li class="pure-u-1-1">
+            <div class="pure-g">
+                <div class="pure-u-1-12" *ngFor="let position of player.position">
+                    {{position.name}}:{{position.score | number: '1.0-1'}}
+                </div>
+            </div>
         </li>
         <li class="pure-u-1-2">
             <label>星级</label>

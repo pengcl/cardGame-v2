@@ -2,15 +2,15 @@ import {Tag} from '../models/tag.model';
 
 export const tags: Tag[] = [
     {
-        code: '00',
-        name: 'star'
+        en: 'star',
+        cn: '普通'
     },
     {
-        code: '01',
-        name: 'super'
+        en: 'super',
+        cn: '超级'
     },
     {
-        code: '02',
-        name: 'classic'
+        en: 'classic',
+        cn: '经典'
     }
 ];
