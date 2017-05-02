@@ -9,8 +9,22 @@ import 'rxjs/add/operator/map';
 
 import {Players} from '../../../../../both/collections/players.collection';
 import {Player} from '../../../../../both/models/player.model';
+import {Tag} from '../../../../../both/models/tag.model';
 
 import template from './player-details.component.html';
+
+const tags: Tag[] = [
+    {
+        "en": "star",
+        "cn": "普通"
+    }, {
+        "en": "super",
+        "cn": "超级"
+    }, {
+        "en": "classic",
+        "cn": "经典"
+    }
+];
 
 @Component({
     selector: 'player-details',
@@ -22,6 +36,7 @@ export class PlayerDetailsComponent implements OnInit, OnDestroy {
     paramsSub: Subscription;
     player: Player;
     playerSub: Subscription;
+    tags = tags;
 
     constructor(private route: ActivatedRoute) {
     }
@@ -59,7 +74,7 @@ export class PlayerDetailsComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         /*this.paramsSub.unsubscribe();
-        this.playerSub.unsubscribe();*/
+         this.playerSub.unsubscribe();*/
     }
 
 }

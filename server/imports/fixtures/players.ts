@@ -310,6 +310,7 @@ let fake = {
 export function loadPlayers() {
     if (Players.find().cursor.count() === 0) {
         for (var i = 0; i < 500; i++) {
+            //球员级别
             let tagRate = Math.random();
             let tag;
             if (tagRate <= 0.45) {
@@ -322,26 +323,30 @@ export function loadPlayers() {
                 tag = tags[2];
             }
             let position = fake.position(['attacking', 'defending', 'goalkeeping'][fake.score(0, 2)], tag);
+
+            let club = clubs[fake.score(0, 15)];
+            let type = playerTypes[fake.score(0, 2)];
+
             Players.insert({
                 name: {
                     en: Fake.sentence(2),
                     cn: Fake.sentence(2)
                 },
-                nationality: countries[Math.ceil(Math.random() * 8)].code,
+                nationality: countries[fake.score(0, 8)].code,
                 weight: fake.score(60, 100),
                 birthday: fake.birthday(),
                 height: fake.score(160, 200),
                 club: {
-                    en: clubs[Math.ceil(Math.random() * 15)].en,
-                    cn: clubs[Math.ceil(Math.random() * 15)].cn
+                    en: club.en,
+                    cn: club.cn
                 },
                 uniformNo: fake.score(1, 22),
                 position: position.position,
                 star: fake.score(1, 3),
                 level: 1,
                 type: {
-                    en: playerTypes[Math.ceil(Math.random() * 2)].en,
-                    cn: playerTypes[Math.ceil(Math.random() * 2)].cn
+                    en: type.en,
+                    cn: type.cn
                 },
                 tag: {
                     en: position.tag.en,
