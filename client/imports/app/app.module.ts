@@ -8,6 +8,8 @@ import {AccountsModule} from 'angular2-meteor-accounts-ui';
 
 import {AppComponent} from './app.component';
 import {routes} from './app.routes';
+
+import {COMPONENTS_DECLARATIONS} from './components';
 import {PLAYERS_DECLARATIONS} from './players';
 import {PARTIES_DECLARATIONS} from './parties';
 
@@ -25,7 +27,8 @@ import {PARTIES_DECLARATIONS} from './parties';
     declarations: [
         AppComponent,
         ...PARTIES_DECLARATIONS,
-        ...PLAYERS_DECLARATIONS
+        ...PLAYERS_DECLARATIONS,
+        ...COMPONENTS_DECLARATIONS
     ],
 
     bootstrap: [

@@ -9,61 +9,6 @@ declare var Fake: {
     sentence(words: number): string;
 };
 
-interface attacking {
-    crossing: number;
-    finishing: number;
-    heading: number;
-    shortPassing: number;
-    volleys: number;
-}
-
-interface skill {
-    dribbling: number;
-    curve: number;
-    freeKick: number;
-    longPassing: number;
-    ballControl: number;
-}
-
-interface movement {
-    acceleration: number;
-    sprintSpeed: number;
-    agility: number;
-    reactions: number;
-    balance: number;
-}
-
-interface power {
-    shotPower: number;
-    jumping: number;
-    stamina: number;
-    strength: number;
-    longShots: number;
-}
-
-interface mentality {
-    aggression: number;
-    interceptions: number;
-    positioning: number;
-    vision: number;
-    penalties: number;
-    composure: number;
-}
-
-interface defending {
-    marking: number;
-    standingTackle: number;
-    slidingTackle: number;
-}
-
-interface goalkeeping {
-    diving: number;
-    handling: number;
-    kicking: number;
-    positioning: number;
-    reflexes: number;
-}
-
 let fake = {
     score: function (start: number, end: number) {
         return start + Math.ceil((end - start) * Math.random());
