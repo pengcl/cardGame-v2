@@ -1,6 +1,6 @@
 import {Club} from '../models/club.model';
 
-export const clubs: Club[] = [
+export const mockClubs: Club[] = [
     {
         en: 'Juventus',
         cn: '尤文图斯'

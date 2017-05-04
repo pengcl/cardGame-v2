@@ -10,21 +10,18 @@ import 'rxjs/add/operator/map';
 import {Players} from '../../../../../both/collections/players.collection';
 import {Player} from '../../../../../both/models/player.model';
 import {Tag} from '../../../../../both/models/tag.model';
+import {Type} from '../../../../../both/models/type.model';
+import {Club} from '../../../../../both/models/club.model';
+
+import {mockTypes} from '../../../../../both/mock-data/types';
+import {mockTags} from '../../../../../both/mock-data/tags';
+import {mockClubs} from '../../../../../both/mock-data/clubs';
 
 import template from './player-details.component.html';
 
-const tags: Tag[] = [
-    {
-        "en": "star",
-        "cn": "普通"
-    }, {
-        "en": "super",
-        "cn": "超级"
-    }, {
-        "en": "classic",
-        "cn": "经典"
-    }
-];
+const tags: Tag[] = mockTags;
+const types: Type[] = mockTypes;
+const clubs: Club[] = mockClubs;
 
 @Component({
     selector: 'player-details',
@@ -37,6 +34,8 @@ export class PlayerDetailsComponent implements OnInit, OnDestroy {
     player: Player;
     playerSub: Subscription;
     tags = tags;
+    types = types;
+    clubs = clubs;
 
     constructor(private route: ActivatedRoute) {
     }
@@ -72,9 +71,21 @@ export class PlayerDetailsComponent implements OnInit, OnDestroy {
         });
     }
 
+    receiverTag(event) {
+        this.player.tag = event;
+    }
+
+    receiverType(event) {
+        this.player.type = event;
+    }
+
+    receiverClub(event) {
+        this.player.club = event;
+    }
+
     ngOnDestroy() {
-        /*this.paramsSub.unsubscribe();
-         this.playerSub.unsubscribe();*/
+        //this.paramsSub.unsubscribe();
+        //this.playerSub.unsubscribe();
     }
 
 }

@@ -1,6 +1,6 @@
 import {Tag} from '../models/tag.model';
 
-export const tags: Tag[] = [
+export const mockTags: Tag[] = [
     {
         en: 'star',
         cn: '普通'

@@ -1,4 +1,4 @@
-export interface PlayerType {
+export interface Type {
     en: string;
     cn: string;
 }

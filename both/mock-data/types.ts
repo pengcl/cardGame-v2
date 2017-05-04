@@ -1,6 +1,6 @@
-import {PlayerType} from '../models/playerType.model';
+import {Type} from '../models/type.model';
 
-export const playerTypes: PlayerType[] = [
+export const mockTypes: Type[] = [
     {
         en: 'speed',
         cn: '速度'

@@ -101,12 +101,106 @@
             <label>等级</label>
             <input type="text" [(ngModel)]="player.level" name="level" disabled>
         </div>
-        <div class="four wide field">
-            <label>类型</label>
-            <input type="text" [(ngModel)]="player.type" name="type[en]" disabled>
-            <input type="text" [(ngModel)]="player.type" name="type[cn]" disabled>
+        <semantic-select [optionLabel]="1" [options]="types" [option]="player.type" (optionOut)="receiverType($event)" class="four wide field"></semantic-select>
+        <semantic-select [optionLabel]="2" [options]="tags" [option]="player.tag" (optionOut)="receiverTag($event)" class="four wide field"></semantic-select>
+    </div>
+
+    <div class="field">
+        <semantic-select [optionLabel]="2" [options]="clubs" [option]="player.club" (optionOut)="receiverClub($event)" class="four wide field"></semantic-select>
+    </div>
+
+
+    <h4 class="ui dividing header">球员能力</h4>
+    <div class="fields">
+        <div class="field">
+            <label>{{player.ability.attacking.property.crossing.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.attacking.property.crossing.value" name="crossing">
         </div>
-        <semantic-select [options]="tags" class="four wide field"></semantic-select>
+        <div class="field">
+            <label>{{player.ability.attacking.property.finishing.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.attacking.property.finishing.value" name="finishing">
+        </div>
+        <div class="field">
+            <label>{{player.ability.attacking.property.heading.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.attacking.property.heading.value" name="heading">
+        </div>
+        <div class="field">
+            <label>{{player.ability.attacking.property.shortPassing.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.attacking.property.shortPassing.value" name="shortPassing">
+        </div>
+        <div class="field">
+            <label>{{player.ability.attacking.property.volleys.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.attacking.property.volleys.value" name="volleys">
+        </div>
+    </div>
+
+    <div class="fields">
+        <div class="field">
+            <label>{{player.ability.skill.property.dribbling.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.skill.property.dribbling.value" name="dribbling">
+        </div>
+        <div class="field">
+            <label>{{player.ability.skill.property.curve.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.skill.property.curve.value" name="curve">
+        </div>
+        <div class="field">
+            <label>{{player.ability.skill.property.freeKick.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.skill.property.freeKick.value" name="freeKick">
+        </div>
+        <div class="field">
+            <label>{{player.ability.skill.property.longPassing.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.skill.property.longPassing.value" name="longPassing">
+        </div>
+        <div class="field">
+            <label>{{player.ability.skill.property.ballControl.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.skill.property.ballControl.value" name="ballControl">
+        </div>
+    </div>
+
+    <div class="fields">
+        <div class="field">
+            <label>{{player.ability.movement.property.acceleration.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.movement.property.acceleration.value" name="star">
+        </div>
+        <div class="field">
+            <label>{{player.ability.movement.property.sprintSpeed.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.movement.property.sprintSpeed.value" name="star">
+        </div>
+        <div class="field">
+            <label>{{player.ability.movement.property.agility.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.movement.property.agility.value" name="star">
+        </div>
+        <div class="field">
+            <label>{{player.ability.movement.property.reactions.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.movement.property.reactions.value" name="star">
+        </div>
+        <div class="field">
+            <label>{{player.ability.movement.property.balance.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.movement.property.balance.value" name="star">
+        </div>
+    </div>
+
+    <div class="fields">
+        <div class="field">
+            <label>{{player.ability.power.property.shotPower.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.power.property.shotPower.value" name="star">
+        </div>
+        <div class="field">
+            <label>{{player.ability.power.property.jumping.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.power.property.jumping.value" name="star">
+        </div>
+        <div class="field">
+            <label>{{player.ability.power.property.stamina.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.power.property.stamina.value" name="star">
+        </div>
+        <div class="field">
+            <label>{{player.ability.power.property.strength.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.power.property.strength.value" name="star">
+        </div>
+        <div class="field">
+            <label>{{player.ability.power.property.longShots.name}}</label>
+            <input type="text" [(ngModel)]="player.ability.power.property.longShots.value" name="star">
+        </div>
     </div>
 
     <!--<ul class="pure-g">

@@ -71,12 +71,13 @@ export class PartiesFormComponent implements OnInit {
                 tag: this.addForm.value.tag,
                 description: this.addForm.value.description,
                 ability: {
-                    attack: this.addForm.value.attack,
-                    defense: this.addForm.value.defense,
-                    speed: this.addForm.value.speed,
+                    attacking: this.addForm.value.attacking,
                     skill: this.addForm.value.skill,
-                    strength: this.addForm.value.strength,
-                    spirit: this.addForm.value.spirit,
+                    movement: this.addForm.value.movement,
+                    power: this.addForm.value.power,
+                    mentality: this.addForm.value.mentality,
+                    defending: this.addForm.value.defending,
+                    goalkeeping:this.addForm.value.goalkeeping
                 },
                 createdAt: '',
                 owner: '',

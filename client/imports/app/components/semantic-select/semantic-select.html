@@ -1,13 +1,9 @@
-<label>标签</label>
+<label>{{optionLabel}}</label>
 <div class="ui fluid search dropdown selection"
      [ngClass]="{'upward active visible': showOptionClass,'':!showOptionClass}">
-    <select name="card[expire-month]">
-        <option value="">标签</option>
-        <option *ngFor="let option of options">{{option.cn}}</option>
-    </select>
     <i class="dropdown icon" (click)="showOption()"></i>
     <input class="search" autocomplete="off" tabindex="0">
-    <div class="default text" [ngClass]="{'default':selectedOption==undefined}"><span *ngIf="selectedOption==undefined">标签</span><span *ngIf="selectedOption!=undefined">{{selectedOption.cn}}</span></div>
+    <div class="default text" [ngClass]="{'default':option==undefined}"><span>{{option.cn}}</span></div>
     <div class="menu transition" [ngClass]="{'visible':showOptionClass,'hidden':!showOptionClass}"
          tabindex="-1">
         <div class="item" *ngFor="let option of options" (click)="setOption($event,option)">{{option.cn}}</div>

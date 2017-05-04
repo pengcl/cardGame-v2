@@ -1,6 +1,6 @@
 import {Country} from '../models/country.model';
 
-export const countries: Country[] = [
+export const mockCountries: Country[] = [
     {
         code: '00',
         name: '意大利'

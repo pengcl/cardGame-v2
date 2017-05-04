@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 import template from './semantic-select.html';
 
@@ -12,12 +12,13 @@ declare var $: any;
 })
 
 export class SemanticSelectComponent {
+    @Input() optionLabel: string;
     @Input() options: any[];
+    @Input() option: any;
+    @Output() optionOut = new EventEmitter();
     showOptionClass: boolean = false;
-    selectedOption: any;
 
     constructor() {
-        console.log(this.selectedOption);
     }
 
     showOption() {
@@ -25,7 +26,8 @@ export class SemanticSelectComponent {
     }
 
     setOption(event, option) {
-        this.selectedOption = option;
+        this.option = option;
+        this.optionOut.emit(this.option);
         this.showOptionClass = !this.showOptionClass;
     }
 }

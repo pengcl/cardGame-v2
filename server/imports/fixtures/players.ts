@@ -1,8 +1,8 @@
 import {Players} from '../../../both/collections/players.collection';
-import {countries} from '../../../both/mock-data/countries';
-import {clubs} from '../../../both/mock-data/clubs';
-import {playerTypes} from '../../../both/mock-data/playerType';
-import {tags} from '../../../both/mock-data/tags';
+import {mockCountries} from '../../../both/mock-data/countries';
+import {mockClubs} from '../../../both/mock-data/clubs';
+import {mockTypes} from '../../../both/mock-data/types';
+import {mockTags} from '../../../both/mock-data/tags';
 import {getPosition} from '../../../both/func/positions';
 
 declare var Fake: {
@@ -314,25 +314,25 @@ export function loadPlayers() {
             let tagRate = Math.random();
             let tag;
             if (tagRate <= 0.45) {
-                tag = tags[0];
+                tag = mockTags[0];
             }
             if (tagRate > 0.45 && tagRate <= 0.9) {
-                tag = tags[1];
+                tag = mockTags[1];
             }
             if (tagRate > 0.9) {
-                tag = tags[2];
+                tag = mockTags[2];
             }
             let position = fake.position(['attacking', 'defending', 'goalkeeping'][fake.score(0, 2)], tag);
 
-            let club = clubs[fake.score(0, 15)];
-            let type = playerTypes[fake.score(0, 2)];
+            let club = mockClubs[fake.score(0, 15)];
+            let type = mockTypes[fake.score(0, 2)];
 
             Players.insert({
                 name: {
                     en: Fake.sentence(2),
                     cn: Fake.sentence(2)
                 },
-                nationality: countries[fake.score(0, 8)].code,
+                nationality: mockCountries[fake.score(0, 8)].code,
                 weight: fake.score(60, 100),
                 birthday: fake.birthday(),
                 height: fake.score(160, 200),
