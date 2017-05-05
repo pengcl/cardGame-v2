@@ -11,6 +11,7 @@ import {routes} from './app.routes';
 
 import {COMPONENTS_DECLARATIONS} from './components';
 import {PLAYERS_DECLARATIONS} from './players';
+import {PAGES_DECLARATIONS} from './pages';
 import {PARTIES_DECLARATIONS} from './parties';
 
 
@@ -28,7 +29,8 @@ import {PARTIES_DECLARATIONS} from './parties';
         AppComponent,
         ...PARTIES_DECLARATIONS,
         ...PLAYERS_DECLARATIONS,
-        ...COMPONENTS_DECLARATIONS
+        ...COMPONENTS_DECLARATIONS,
+        ...PAGES_DECLARATIONS
     ],
 
     bootstrap: [

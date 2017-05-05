@@ -297,7 +297,6 @@ let fake = {
         let ability = this.ability(position, tag);
         let positions = getPosition(ability);
         return {
-            tag: tag,
             ability: ability,
             position: positions
         }
@@ -309,7 +308,7 @@ let fake = {
 
 export function loadPlayers() {
     if (Players.find().cursor.count() === 0) {
-        for (var i = 0; i < 500; i++) {
+        for (var i = 0; i < 50; i++) {
             //球员级别
             let tagRate = Math.random();
             let tag;
@@ -326,32 +325,24 @@ export function loadPlayers() {
 
             let club = mockClubs[fake.score(0, 15)];
             let type = mockTypes[fake.score(0, 2)];
+            let country = mockCountries[fake.score(0, 8)];
 
             Players.insert({
                 name: {
                     en: Fake.sentence(2),
                     cn: Fake.sentence(2)
                 },
-                nationality: mockCountries[fake.score(0, 8)].code,
+                nationality: country,
                 weight: fake.score(60, 100),
                 birthday: fake.birthday(),
                 height: fake.score(160, 200),
-                club: {
-                    en: club.en,
-                    cn: club.cn
-                },
+                club: club,
                 uniformNo: fake.score(1, 22),
                 position: position.position,
                 star: fake.score(1, 3),
                 level: 1,
-                type: {
-                    en: type.en,
-                    cn: type.cn
-                },
-                tag: {
-                    en: position.tag.en,
-                    cn: position.tag.cn
-                },
+                type: type,
+                tag: tag,
                 description: Fake.sentence(30),
                 ability: position.ability
             });

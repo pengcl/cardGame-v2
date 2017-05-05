@@ -1,30 +1,29 @@
 import {CollectionObject} from './collection-object.model';
 import {Position} from './position.model';
+import {Country} from './country.model';
+import {Club} from './club.model';
 
 export interface Player extends CollectionObject {
     name: {
-        en:string;
-        cn:string;
+        en: string;
+        cn: string;
     };
-    nationality: string;
+    nationality: Country;
     weight: number;
     birthday: string;
     height: number;
-    club: {
-        en:string;
-        cn:string;
-    };
+    club: Club;
     uniformNo: number;
     position: Position[];
     star: number;
     level: number;
     type: {
-        en:string;
-        cn:string;
+        en: string;
+        cn: string;
     };
     tag: {
-        en:string;
-        cn:string;
+        en: string;
+        cn: string;
     };
     description: string;
     ability: {

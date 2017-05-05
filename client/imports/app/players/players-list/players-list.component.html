@@ -1,135 +1,129 @@
-<!--<header>
-    <div class="ui container">
-        <h1>Player List ( &lt;!&ndash;{{$ctrl.incompleteCount}}&ndash;&gt; )</h1>
-
-        <label class="hide-completed">
-
-            <input type="checkbox" ng-model="$ctrl.hideCompleted"/>
-
-            Hide Completed Tasks
-
-        </label>
-
-        <form class="new-task">
-
-            <input #searchtext type="text" name="text" placeholder="Search by name"/>
-            <button type="button" (click)="search(searchtext.value)">Search</button>
-        </form>
+<div class="ui dividing right rail">
+    <div class="ui sticky" style="width: 283px !important; height: 237.083px !important;"><h4 class="ui header">Getting
+        started</h4>
+        <div class="ui vertical following fluid accordion text menu">
+            <div class="item"><a class="active title"><i class="dropdown icon"></i> <b>Preface</b></a>
+                <div class="active content menu"><a class="item" href="#using-build-tools">Using Build Tools</a></div>
+            </div>
+            <div class="item"><a class="title"><i class="dropdown icon"></i> <b>Installing</b></a>
+                <div class="content menu"><a class="item" href="#install-nodejs">Install NodeJS</a><a class="item"
+                                                                                                      href="#install-gulp">Install
+                    Gulp</a><a class="item" href="#install-semantic-ui">Install Semantic UI</a><a class="item"
+                                                                                                  href="#include-in-your-html">Include
+                    in Your HTML</a></div>
+            </div>
+            <div class="item"><a class="title"><i class="dropdown icon"></i> <b>Updating</b></a>
+                <div class="content menu"><a class="item" href="#updating-via-npm">Updating via NPM</a></div>
+            </div>
+            <div class="item"><a class="title"><i class="dropdown icon"></i> <b>Next Steps</b></a>
+                <div class="content menu"><a class="item" href="#all-set">All Set!</a></div>
+            </div>
+        </div>
     </div>
-</header>-->
-<div>
-    <!--<parties-form style="float: left"></parties-form>-->
-
-    <table class="ui very basic celled table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Class</th>
-                <th>Score</th>
-                <th>Correct Guesses</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let player of players | async" [routerLink]="['/player', player._id]">
-                <td>
-                    <h4 class="ui image header">
-                        <img src="/images/players/player-s.png" class="ui mini rounded image">
-                        <div class="content">{{player.name.cn}},{{player.birthday}}
-                            <div class="sub header"><!--{{player.description}}--></div>
-                        </div>
-                    </h4>
-                </td>
-                <td>
-                    <div class="ui star rating disabled" data-rating="4" data-max-rating="5"><i class="icon active"></i><i class="icon active"></i><i class="icon active"></i></div>
-                </td>
-                <td>
-                    <div class="ui statistics">
-                        <div class="red statistic" *ngFor="let position of player.position">
-                            <div class="value">
-                                {{position.value | number: '1.0-1'}}
-                            </div>
-                            <div class="label">{{position.name}}</div>
-                        </div>
-                        <!--<div class="orange statistic">
-                            <div class="value">
-                                8
-                            </div>
-                            <div class="label">Orange </div>
-                        </div>
-                        <div class="yellow statistic">
-                            <div class="value">
-                                28
-                            </div>
-                            <div class="label">Yellow </div>
-                        </div>
-                        <div class="olive statistic">
-                            <div class="value">
-                                7
-                            </div>
-                            <div class="label">Olive </div>
-                        </div>
-                        <div class="green statistic">
-                            <div class="value">
-                                14
-                            </div>
-                            <div class="label">Green </div>
-                        </div>
-                        <div class="teal statistic">
-                            <div class="value">
-                                82
-                            </div>
-                            <div class="label">Teal </div>
-                        </div>
-                        <div class="blue statistic">
-                            <div class="value">
-                                1
-                            </div>
-                            <div class="label">Blue </div>
-                        </div>
-                        <div class="violet statistic">
-                            <div class="value">
-                                22
-                            </div>
-                            <div class="label">Violet </div>
-                        </div>
-                        <div class="purple statistic">
-                            <div class="value">
-                                23
-                            </div>
-                            <div class="label">Purple </div>
-                        </div>
-                        <div class="pink statistic">
-                            <div class="value">
-                                15
-                            </div>
-                            <div class="label">Pink </div>
-                        </div>
-                        <div class="brown statistic">
-                            <div class="value">
-                                36
-                            </div>
-                            <div class="label">Brown </div>
-                        </div>
-                        <div class="grey statistic">
-                            <div class="value">
-                                49
-                            </div>
-                            <div class="label">Grey </div>
-                        </div>-->
-                    </div>
-                </td>
-                <td>
-                    {{player.star}}
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <!--<ul>
-        <li *ngFor="let player of players | async">
-            <button class="delete" (click)="removeParty(player)">&times;</button>
-            <input type="checkbox" ng-checked="task.checked" ng-click="$ctrl.setChecked(task)" class="toggle-checked"/>
-            <a class="text" [routerLink]="['/player', player._id]">{{player.name}}</a>
-        </li>
-    </ul>-->
 </div>
+
+<table class="ui very basic celled table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Score</th>
+        <th>Correct Guesses</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let player of players | async" [routerLink]="['/player', player._id]">
+        <td>
+            <h4 class="ui image header">
+                <img src="/images/players/player-s.png" class="ui mini rounded image">
+                <div class="content">{{player.name.cn}},{{player.birthday}}
+                    <div class="sub header"><!--{{player.description}}--></div>
+                </div>
+            </h4>
+        </td>
+        <td>
+            <div class="ui star rating disabled" data-rating="4" data-max-rating="5"><i class="icon active"></i><i
+                    class="icon active"></i><i class="icon active"></i></div>
+        </td>
+        <td>
+            <div class="ui statistics">
+                <div class="red statistic" *ngFor="let position of player.position">
+                    <div class="value">
+                        {{position.value | number: '1.0-1'}}
+                    </div>
+                    <div class="label">{{position.name}}</div>
+                </div>
+                <!--<div class="orange statistic">
+                    <div class="value">
+                        8
+                    </div>
+                    <div class="label">Orange </div>
+                </div>
+                <div class="yellow statistic">
+                    <div class="value">
+                        28
+                    </div>
+                    <div class="label">Yellow </div>
+                </div>
+                <div class="olive statistic">
+                    <div class="value">
+                        7
+                    </div>
+                    <div class="label">Olive </div>
+                </div>
+                <div class="green statistic">
+                    <div class="value">
+                        14
+                    </div>
+                    <div class="label">Green </div>
+                </div>
+                <div class="teal statistic">
+                    <div class="value">
+                        82
+                    </div>
+                    <div class="label">Teal </div>
+                </div>
+                <div class="blue statistic">
+                    <div class="value">
+                        1
+                    </div>
+                    <div class="label">Blue </div>
+                </div>
+                <div class="violet statistic">
+                    <div class="value">
+                        22
+                    </div>
+                    <div class="label">Violet </div>
+                </div>
+                <div class="purple statistic">
+                    <div class="value">
+                        23
+                    </div>
+                    <div class="label">Purple </div>
+                </div>
+                <div class="pink statistic">
+                    <div class="value">
+                        15
+                    </div>
+                    <div class="label">Pink </div>
+                </div>
+                <div class="brown statistic">
+                    <div class="value">
+                        36
+                    </div>
+                    <div class="label">Brown </div>
+                </div>
+                <div class="grey statistic">
+                    <div class="value">
+                        49
+                    </div>
+                    <div class="label">Grey </div>
+                </div>-->
+            </div>
+        </td>
+        <td>
+            {{player.star}}
+        </td>
+    </tr>
+    </tbody>
+</table>

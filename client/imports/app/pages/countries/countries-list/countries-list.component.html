@@ -1,0 +1,43 @@
+<div class="ui dividing right rail">
+    <div class="ui sticky" style="width: 283px !important; height: 237.083px !important;"><h4 class="ui header">Getting
+        started</h4>
+        <div class="ui vertical following fluid accordion text menu">
+            <div class="item"><a class="active title"><i class="dropdown icon"></i> <b>Preface</b></a>
+                <div class="active content menu"><a class="item" href="#using-build-tools">Using Build Tools</a></div>
+            </div>
+            <div class="item"><a class="title"><i class="dropdown icon"></i> <b>Installing</b></a>
+                <div class="content menu"><a class="item" href="#install-nodejs">Install NodeJS</a><a class="item"
+                                                                                                      href="#install-gulp">Install
+                    Gulp</a><a class="item" href="#install-semantic-ui">Install Semantic UI</a><a class="item"
+                                                                                                  href="#include-in-your-html">Include
+                    in Your HTML</a></div>
+            </div>
+            <div class="item"><a class="title"><i class="dropdown icon"></i> <b>Updating</b></a>
+                <div class="content menu"><a class="item" href="#updating-via-npm">Updating via NPM</a></div>
+            </div>
+            <div class="item"><a class="title"><i class="dropdown icon"></i> <b>Next Steps</b></a>
+                <div class="content menu"><a class="item" href="#all-set">All Set!</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="ui very basic celled table">
+    <thead>
+    <tr>
+        <th>名称</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let country of countries | async" [routerLink]="['/country', country._id]">
+        <td>
+            <div class="ui image header">
+                <img src="/images/players/player-s.png" class="ui mini rounded image">
+                <div class="content">{{country.cn}}
+                    <div class="sub header">{{country.en}}</div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>

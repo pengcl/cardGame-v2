@@ -1,12 +1,12 @@
 import {Meteor} from 'meteor/meteor';
-import {Countries} from '../../../both/collections/country.collection';
+import {Clubs} from '../../../both/collections/clubs.collection';
 
-Meteor.publish('countries', function () {
-    return Countries.find({});
+Meteor.publish('clubs', function () {
+    return Clubs.find({});
 });
 
-Meteor.publish('country', function (countryId: string) {
+Meteor.publish('club', function (clubId: string) {
 
-    return Countries.find({_id: countryId});
+    return Clubs.find({_id: clubId});
 
 });
