@@ -1,6 +1,7 @@
 <a class="item" (click)="showSidebarMenu()"><i class="home icon"></i> Home </a>
-<a class="item"><i class="grid layout icon"></i> 球员管理 </a>
-<a class="item"><i class="mail icon"></i> 球队管理 </a>
+<a class="item" [routerLink]="['/players']"><i class="grid layout icon"></i> 球员管理 </a>
+<a class="item" [routerLink]="['/clubs']"><i class="mail icon"></i> 球队管理 </a>
+<a class="item" [routerLink]="['/countries']"><i class="world icon"></i> 国家管理 </a>
 <div class="ui simple dropdown item">会员管理 <i class="dropdown icon"></i>
     <div class="menu">
         <a class="item"><i class="edit icon"></i> 球员管理</a>

@@ -1,5 +1,5 @@
 import {Meteor} from 'meteor/meteor';
-import {Countries} from '../../../both/collections/country.collection';
+import {Countries} from '../../../both/collections/countries.collection';
 
 Meteor.publish('countries', function () {
 

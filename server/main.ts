@@ -9,6 +9,7 @@ import './imports/publications/countries';
 import './imports/publications/clubs';
 import './imports/publications/parties';
 import './imports/publications/players';
+import './imports/publications/images';
 
 
 Meteor.startup(() => {

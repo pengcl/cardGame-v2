@@ -51,8 +51,11 @@ export class PlayerDetailsComponent implements OnInit, OnDestroy {
                 }
 
                 this.playerSub = MeteorObservable.subscribe('player', this.playerId).subscribe(() => {
-                    this.player = Players.findOne(this.playerId);
-                    console.log(this.player);
+                    MeteorObservable.autorun().subscribe(() => {
+
+                        this.player = Players.findOne(this.playerId);
+
+                    });
                 });
             });
     }
@@ -85,7 +88,7 @@ export class PlayerDetailsComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         //this.paramsSub.unsubscribe();
-        //this.playerSub.unsubscribe();
+        this.playerSub.unsubscribe();
     }
 
 }

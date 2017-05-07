@@ -33,7 +33,7 @@ export class PlayersListComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
 
-        //this.playersSub.unsubscribe();
+        this.playersSub.unsubscribe();
 
     }
 

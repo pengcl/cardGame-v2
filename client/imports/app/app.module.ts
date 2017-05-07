@@ -14,6 +14,8 @@ import {PLAYERS_DECLARATIONS} from './players';
 import {PAGES_DECLARATIONS} from './pages';
 import {PARTIES_DECLARATIONS} from './parties';
 
+import {FileDropModule} from "angular2-file-drop";
+
 
 @NgModule({
 
@@ -23,6 +25,7 @@ import {PARTIES_DECLARATIONS} from './parties';
         ReactiveFormsModule,
         RouterModule.forRoot(routes),
         AccountsModule,
+        FileDropModule
     ],
 
     declarations: [

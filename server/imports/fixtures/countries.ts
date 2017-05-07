@@ -1,4 +1,4 @@
-import {Countries} from '../../../both/collections/country.collection';
+import {Countries} from '../../../both/collections/countries.collection';
 import {Country} from '../../../both/models/country.model';
 import {mockCountries} from '../../../both/mock-data/countries';
 

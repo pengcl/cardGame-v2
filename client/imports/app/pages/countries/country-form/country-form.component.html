@@ -1,0 +1,16 @@
+<form [formGroup]="addForm" class="ui form" (ngSubmit)="addCountry()">
+    <h2 class="ui dividing header">国家管理</h2>
+    <div class="field">
+        <label>名称</label>
+        <div class="two fields">
+            <div class="field">
+                <input type="text" formControlName="cn" placeholder="中文名">
+            </div>
+            <div class="field">
+                <input type="text" formControlName="en" placeholder="英文名">
+            </div>
+        </div>
+    </div>
+
+    <button type="submit">Add</button>
+</form>

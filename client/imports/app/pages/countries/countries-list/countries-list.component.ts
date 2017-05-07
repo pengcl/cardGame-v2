@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 import {MeteorObservable} from 'meteor-rxjs';
 
-import {Countries} from '../../../../../../both/collections/country.collection';
+import {Countries} from '../../../../../../both/collections/countries.collection';
 import {Country} from '../../../../../../both/models/country.model';
 
 import template from './countries-list.component.html';
