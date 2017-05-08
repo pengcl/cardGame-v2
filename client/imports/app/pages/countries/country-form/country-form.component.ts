@@ -19,6 +19,7 @@ export class CountryFormComponent implements OnInit {
     countriesSub: Subscription;
 
     addForm: FormGroup;
+    images: string[] = [];
 
     constructor(private formBuilder: FormBuilder) {
     }
@@ -40,12 +41,19 @@ export class CountryFormComponent implements OnInit {
 
         if (this.addForm.valid) {
             Countries.insert({
+                images: this.images,
                 cn: this.addForm.value.cn,
                 en: this.addForm.value.en
             });
 
             this.addForm.reset();
         }
+
+    }
+
+    onImage(imageId: string) {
+
+        this.images.push(imageId);
 
     }
 

@@ -2,7 +2,6 @@
 
     <div fileDrop
          [ngClass]="{'file-is-over': fileIsOver, 'file-uploading': uploading}"
-         [ngClass]="{'file-is-over': fileIsOver}"
          (fileOver)="fileOver($event)"
          (onFileDrop)="onFileDrop($event)">
 

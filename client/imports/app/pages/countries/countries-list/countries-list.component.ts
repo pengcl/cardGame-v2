@@ -19,8 +19,10 @@ import template from './countries-list.component.html';
 export class CountriesListComponent implements OnInit, OnDestroy {
     countries: Observable<Country[]>;
     countriesSub: Subscription;
+    imagesSubs: Subscription;
 
     ngOnInit() {
+        this.imagesSubs = MeteorObservable.subscribe('images').subscribe();
         this.countries = Countries.find({}).zone();
         this.countriesSub = MeteorObservable.subscribe('countries').subscribe();
     }
@@ -33,8 +35,7 @@ export class CountriesListComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-
-        //this.playersSub.unsubscribe();
-
+        this.countriesSub.unsubscribe();
+        this.imagesSubs.unsubscribe();
     }
 }

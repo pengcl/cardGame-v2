@@ -101,4 +101,12 @@ export class FileUploadComponent implements OnInit {
         this.onFile.emit(file._id);
 
     }
+
+    reset() {
+
+        this.filesArray = [];
+
+        this.files.next(this.filesArray);
+
+    }
 }
