@@ -30,12 +30,12 @@
     <tbody>
     <tr *ngFor="let country of countries | async" [routerLink]="['/country', country._id]">
         <td>
-            <div class="ui image header">
+            <h4 class="ui image header">
                 <img *ngIf="country.images && country.images.length > 0" class="ui mini rounded image" [src]="country | displayMainImage">
                 <div class="content">{{country.cn}}
                     <div class="sub header">{{country.en}}</div>
                 </div>
-            </div>
+            </h4>
             <!--<a class="mini ui right floated green button" href="">添加</a>-->
         </td>
     </tr>

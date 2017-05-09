@@ -74,6 +74,24 @@ export class FileUploadComponent implements OnInit {
         this.fileIsOver = fileIsOver;
     }
 
+    selectedFileOnChanged(file: any): void {
+
+        console.log(file);
+
+        this.uploading = true;
+        upload(file).then((result) => {
+
+            this.uploading = false;
+            this.addFile(result);
+
+        }).catch((error) => {
+
+            this.uploading = false;
+            console.log(`Something went wrong!`, error);
+
+        });
+    }
+
     onFileDrop(file: File): void {
         this.uploading = true;
         upload(file)

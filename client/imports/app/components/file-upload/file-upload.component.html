@@ -1,14 +1,10 @@
 <div class="parties-update-container">
-
-    <div fileDrop
-         [ngClass]="{'file-is-over': fileIsOver, 'file-uploading': uploading}"
-         (fileOver)="fileOver($event)"
-         (onFileDrop)="onFileDrop($event)">
-
-        <div>Drop an image to here</div>
-
+    <div class="file-uploader__input-box">
+        <input id="uploaderInput" (change)="selectedFileOnChanged($event.target.files[0])"
+               [ngClass]="{'file-uploading': uploading}"
+               class="file-uploader__input" accept="image/*" multiple="" type="file">
     </div>
-    
+
     <div *ngIf="thumbs" class="thumbs">
 
         <div *ngFor="let thumb of thumbs | async" class="thumb">

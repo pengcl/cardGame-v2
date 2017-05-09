@@ -32,12 +32,12 @@
     <tbody>
     <tr *ngFor="let club of clubs | async" [routerLink]="['/club', club._id]">
         <td>
-            <div class="ui image header">
+            <h4 class="ui image header">
                 <img src="/images/players/player-s.png" class="ui mini rounded image">
                 <div class="content">{{club.cn}}
                     <div class="sub header">{{club.en}}</div>
                 </div>
-            </div>
+            </h4>
         </td>
         <td>
             <div class="">{{club.country.cn}}</div>
