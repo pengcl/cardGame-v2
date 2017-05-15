@@ -1,19 +1,6 @@
-<div class="parties-update-container">
-    <div class="file-uploader__input-box">
-        <input id="uploaderInput" (change)="selectedFileOnChanged($event.target.files[0])"
-               [ngClass]="{'file-uploading': uploading}"
-               class="file-uploader__input" accept="image/*" multiple="" type="file">
-    </div>
-
-    <div *ngIf="thumbs" class="thumbs">
-
-        <div *ngFor="let thumb of thumbs | async" class="thumb">
-
-            <img [src]="thumb.url"/>
-
-        </div>
-
-        <div class="clear"></div>
-
-    </div>
+<div class="file-uploader__input-box">
+    <div *ngIf="thumbs"><img *ngFor="let thumb of thumbs | async" [src]="thumb.url"/></div>
+    <input *ngIf="!thumbs" id="uploaderInput" (change)="selectedFileOnChanged($event.target.files[0])"
+           [ngClass]="{'file-uploading': uploading}"
+           class="file-uploader__input" accept="image/*" multiple="" type="file">
 </div>

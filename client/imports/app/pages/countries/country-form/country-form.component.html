@@ -1,16 +1,22 @@
 <form [formGroup]="addForm" class="ui form" (ngSubmit)="addCountry();upload.reset();">
     <h2 class="ui dividing header">国家管理</h2>
-    <div class="field">
-        <label>名称</label>
-        <div class="two fields">
-            <div class="field">
-                <input type="text" formControlName="cn" placeholder="中文名">
-            </div>
-            <div class="field">
-                <input type="text" formControlName="en" placeholder="英文名">
+    <div class="fields">
+        <div class="one wide field">
+            <label>国旗</label>
+            <file-upload #upload (onFile)="onImage($event)"></file-upload>
+        </div>
+        <div class="fifteen wide field">
+            <div class="two fields">
+                <div class="field">
+                    <label>中文名</label>
+                    <input type="text" formControlName="cn" placeholder="中文名">
+                </div>
+                <div class="field">
+                    <label>英文名</label>
+                    <input type="text" formControlName="en" placeholder="英文名">
+                </div>
             </div>
         </div>
-        <file-upload #upload (onFile)="onImage($event)"></file-upload>
     </div>
 
     <button type="submit">Add</button>

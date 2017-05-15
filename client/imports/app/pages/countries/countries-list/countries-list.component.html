@@ -21,23 +21,28 @@
     </div>
 </div>
 
-<table class="ui very basic celled table">
+<table class="ui selectable sortable compact celled striped definition table">
     <thead>
     <tr>
-        <th>名称 <a class="mini ui right floated green button" [routerLink]="['/addCountry']">添加</a></th>
+        <th class="one wide">国旗</th>
+        <th>中文名</th>
+        <th>英文名<!--<a class="mini ui right floated green button" [routerLink]="['/addCountry']">添加</a>--></th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let country of countries | async" [routerLink]="['/country', country._id]">
-        <td>
+        <td><i class="{{country.en | lowercase}} flag"></i></td>
+        <td>{{country.cn}}</td>
+        <td>{{country.en}}</td>
+        <!--<td>
             <h4 class="ui image header">
                 <img *ngIf="country.images && country.images.length > 0" class="ui mini rounded image" [src]="country | displayMainImage">
                 <div class="content">{{country.cn}}
                     <div class="sub header">{{country.en}}</div>
                 </div>
             </h4>
-            <!--<a class="mini ui right floated green button" href="">添加</a>-->
-        </td>
+            &lt;!&ndash;<a class="mini ui right floated green button" href="">添加</a>&ndash;&gt;
+        </td>-->
     </tr>
     </tbody>
 </table>
