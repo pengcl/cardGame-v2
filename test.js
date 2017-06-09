@@ -1,3 +1,4 @@
+/*
 function createRandomTeam() {
     var capability;
     do {
@@ -192,4 +193,32 @@ var match = {
     }
 };
 
-console.log(setTeamsData(grouping(getThirtyTwo(Teams))));
+//setTeamsData(grouping(getThirtyTwo(Teams)));
+
+var MongoClient = require('mongo').MongoClient;
+var DB_CONN_STR = 'mongodb://localhost:3001/cardGame';
+
+var insertData = function(db, callback) {
+    //连接到表 site
+    var collection = db.collection('UEFA');
+    var teams = Teams;
+    //插入数据
+    var data = [{"name":"菜鸟教程","url":"www.runoob.com"},{"name":"菜鸟工具","url":"c.runoob.com"}];
+    collection.insert(teams, function(err, result) {
+        if(err)
+        {
+            console.log('Error:'+ err);
+            return;
+        }
+        callback(result);
+    });
+};
+
+MongoClient.connect(DB_CONN_STR, function(err, db) {
+    console.log("连接成功！");
+    insertData(db, function(result) {
+        console.log(result);
+        db.close();
+    });
+});
+*/
