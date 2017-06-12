@@ -23,7 +23,7 @@ function loseFiveOut(teams) {
 }
 
 //获取32强
-var getThirtyTwo = function (teams) {
+var thirtyTwo = function (teams) {
     if (teams.length <= 32) {
         return teams
     } else {
@@ -47,6 +47,10 @@ var getThirtyTwo = function (teams) {
                 return teams
             }
         }
-        return getThirtyTwo(teams);
+        return thirtyTwo(teams);
     }
 };
+
+export function getThirtyTwo(teams) {
+    return thirtyTwo(teams);
+}

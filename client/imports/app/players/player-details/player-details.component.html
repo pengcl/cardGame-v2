@@ -20,7 +20,9 @@
 </header>-->
 
 <form class="ui form" *ngIf="player" (ngSubmit)="savePlayer()">
-    <h2 class="ui dividing header">Types</h2>
+    <h2 class="ui dividing header">球员编辑</h2>
+
+    <h4 class="ui dividing header">基本资料</h4>
     <div class="field">
         <label>名称</label>
         <div class="two fields">
@@ -34,10 +36,10 @@
     </div>
 
     <div class="fields">
-        <div class="two wide field">
-            <label>国籍</label>
-            <input type="text" [(ngModel)]="player.nationality" name="nationality">
-        </div>
+
+        <semantic-select [optionAsync]="true" [optionLabel]="'国籍'" [options]="countries" [option]="player.nationality"
+                         (optionOut)="receiverCountry($event)" class="two wide field"></semantic-select>
+
         <div class="two wide field">
             <label>身高</label>
             <input type="text" [(ngModel)]="player.height" name="height">
@@ -86,7 +88,7 @@
                     </div>
                 </div>
                 <div class="field">
-                    <input name="card[expire-year]" maxlength="4" placeholder="球队" type="text">
+                    <input name="card[expire-year]" maxlength="4" placeholder="年" type="text">
                 </div>
             </div>
         </div>
@@ -101,12 +103,15 @@
             <label>等级</label>
             <input type="text" [(ngModel)]="player.level" name="level" disabled>
         </div>
-        <semantic-select [optionLabel]="1" [options]="types" [option]="player.type" (optionOut)="receiverType($event)" class="four wide field"></semantic-select>
-        <semantic-select [optionLabel]="2" [options]="tags" [option]="player.tag" (optionOut)="receiverTag($event)" class="four wide field"></semantic-select>
+        <semantic-select [optionAsync]="false" [optionLabel]="'球员类型'" [options]="types" [option]="player.type"
+                         (optionOut)="receiverType($event)" class="four wide field"></semantic-select>
+        <semantic-select [optionAsync]="false" [optionLabel]="'球员标签'" [options]="tags" [option]="player.tag"
+                         (optionOut)="receiverTag($event)" class="four wide field"></semantic-select>
     </div>
 
     <div class="field">
-        <semantic-select [optionLabel]="2" [options]="clubs" [option]="player.club" (optionOut)="receiverClub($event)" class="four wide field"></semantic-select>
+        <semantic-select [optionAsync]="true" [optionLabel]="'俱乐部'" [options]="clubs" [option]="player.club"
+                         (optionOut)="receiverClub($event)" class="four wide field"></semantic-select>
     </div>
 
 

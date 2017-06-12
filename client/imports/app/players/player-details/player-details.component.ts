@@ -1,5 +1,6 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 import {Meteor} from 'meteor/meteor';
 import {MeteorObservable} from 'meteor-rxjs';
@@ -7,15 +8,18 @@ import {MeteorObservable} from 'meteor-rxjs';
 
 import 'rxjs/add/operator/map';
 
-import {Players} from '../../../../../both/collections/players.collection';
-import {Player} from '../../../../../both/models/player.model';
+import {Country} from '../../../../../both/models/country.model';
 import {Tag} from '../../../../../both/models/tag.model';
 import {Type} from '../../../../../both/models/type.model';
 import {Club} from '../../../../../both/models/club.model';
+import {Player} from '../../../../../both/models/player.model';
 
+import {Clubs} from '../../../../../both/collections/clubs.collection';
+import {Countries} from '../../../../../both/collections/countries.collection';
 import {mockTypes} from '../../../../../both/mock-data/types';
 import {mockTags} from '../../../../../both/mock-data/tags';
 import {mockClubs} from '../../../../../both/mock-data/clubs';
+import {Players} from '../../../../../both/collections/players.collection';
 
 import template from './player-details.component.html';
 
@@ -30,17 +34,30 @@ const clubs: Club[] = mockClubs;
 
 export class PlayerDetailsComponent implements OnInit, OnDestroy {
     playerId: string;
-    paramsSub: Subscription;
     player: Player;
     playerSub: Subscription;
+
+    players: Observable<Player[]>;
+    playersSub: Subscription;
     tags = tags;
     types = types;
-    clubs = clubs;
+
+    clubs: Observable<Club[]>;
+    clubsSub: Subscription;
+
+    countries: Observable<Country[]>;
+    countriesSub: Subscription;
 
     constructor(private route: ActivatedRoute) {
     }
 
     ngOnInit() {
+        this.clubs = Clubs.find({}).zone();
+        this.clubsSub = MeteorObservable.subscribe('clubs').subscribe();
+
+        this.countries = Countries.find({}).zone();
+        this.countriesSub = MeteorObservable.subscribe('countries').subscribe();
+
         this.route.params
             .map(params => params['playerId'])
             .subscribe(playerId => {
@@ -86,8 +103,11 @@ export class PlayerDetailsComponent implements OnInit, OnDestroy {
         this.player.club = event;
     }
 
+    receiverCountry(event) {
+        this.player.nationality = event;
+    }
+
     ngOnDestroy() {
-        //this.paramsSub.unsubscribe();
         this.playerSub.unsubscribe();
     }
 

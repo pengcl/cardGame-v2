@@ -13,12 +13,14 @@ declare var $: any;
 
 export class SemanticSelectComponent {
     @Input() optionLabel: string;
+    @Input() optionAsync: boolean;
     @Input() options: any[];
     @Input() option: any;
     @Output() optionOut = new EventEmitter();
     showOptionClass: boolean = false;
 
     constructor() {
+        console.log(this.options);
     }
 
     showOption() {
