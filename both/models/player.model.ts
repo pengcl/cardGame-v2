@@ -4,6 +4,7 @@ import {Country} from './country.model';
 import {Club} from './club.model';
 
 export interface Player extends CollectionObject {
+    id: number,
     name: {
         en: string;
         cn: string;

@@ -295,7 +295,7 @@ let fake = {
     },
     position: function (position, tag) {
         let ability = this.ability(position, tag);
-        let positions = getPosition(ability);
+        let positions = getPosition(ability, 1);
         return {
             ability: ability,
             position: positions

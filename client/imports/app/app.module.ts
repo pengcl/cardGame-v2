@@ -11,7 +11,7 @@ import {routes} from './app.routes';
 
 import {PIPES_DECLARATIONS} from './pipes';
 import {COMPONENTS_DECLARATIONS} from './components';
-import {PLAYERS_DECLARATIONS} from './players';
+import {PLAYERS_DECLARATIONS} from './pages/players';
 import {PAGES_DECLARATIONS} from './pages';
 import {PARTIES_DECLARATIONS} from './parties';
 

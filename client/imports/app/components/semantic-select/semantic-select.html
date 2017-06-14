@@ -1,4 +1,4 @@
-<label>{{optionLabel}}</label>
+<label *ngIf="optionLabel">{{optionLabel}}</label>
 <div class="ui fluid search dropdown selection"
      [ngClass]="{'upward active visible': showOptionClass,'':!showOptionClass}">
     <i class="dropdown icon" (click)="showOption()"></i>
@@ -6,10 +6,16 @@
     <div class="default text" [ngClass]="{'default':option==undefined}"><span>{{option.cn}}</span></div>
     <div *ngIf="!optionAsync" class="menu transition" [ngClass]="{'visible':showOptionClass,'hidden':!showOptionClass}"
          tabindex="-1">
-        <div class="item" *ngFor="let option of options" (click)="setOption($event,option)">{{option.cn}}</div>
+        <div class="item" *ngFor="let option of options" (click)="setOption($event,option)">
+            <span *ngIf="option.cn">{{option.cn}}</span>
+            <span *ngIf="!option.cn">{{option}}</span>
+        </div>
     </div>
     <div *ngIf="optionAsync" class="menu transition" [ngClass]="{'visible':showOptionClass,'hidden':!showOptionClass}"
          tabindex="-1">
-        <div class="item" *ngFor="let option of options | async" (click)="setOption($event,option)">{{option.cn}}</div>
+        <div class="item" *ngFor="let option of options | async" (click)="setOption($event,option)">
+            <span *ngIf="option.cn">{{option.cn}}</span>
+            <span *ngIf="!option.cn">{{option}}</span>
+        </div>
     </div>
 </div>

@@ -1,0 +1,254 @@
+<!--<header>
+
+    <h1>球员详情</h1>
+
+    <label class="hide-completed">
+
+        <input type="checkbox" ng-model="$ctrl.hideCompleted"/>
+
+        隐藏属性
+
+    </label>
+
+    <login-buttons></login-buttons>
+
+    <form class="new-task">
+
+        <input #searchtext type="text" name="text" placeholder="Search by name"/>
+        <button type="button" (click)="search(searchtext.value)">Search</button>
+    </form>
+</header>-->
+
+<form class="ui form" *ngIf="player" (ngSubmit)="savePlayer()">
+    <h2 class="ui dividing header">球员编辑</h2>
+
+    <h4 class="ui dividing header">基本资料</h4>
+    <div class="field">
+        <label>名称</label>
+        <div class="two fields">
+            <div class="field">
+                <input type="text" [(ngModel)]="player.name.cn" name="name[cn]" placeholder="中文名" type="text">
+            </div>
+            <div class="field">
+                <input type="text" [(ngModel)]="player.name.en" name="name[en]" placeholder="英文名" type="text">
+            </div>
+        </div>
+    </div>
+
+    <div class="fields">
+
+        <semantic-select [optionAsync]="true" [optionLabel]="'国籍'" [options]="countries" [option]="player.nationality"
+                         (optionOut)="receiverCountry($event)" class="two wide field"></semantic-select>
+
+        <div class="two wide field">
+            <label>身高</label>
+            <input type="text" [(ngModel)]="player.height" name="height">
+        </div>
+        <div class="two wide field">
+            <label>体重</label>
+            <input type="text" [(ngModel)]="player.weight" name="weight">
+        </div>
+        <div class="ten wide field">
+            <label>生日</label>
+            <div class="two fields">
+                <semantic-select [optionAsync]="false" [optionLabel]="" [options]="years" [option]="year"
+                                 (optionOut)="receiverYear($event)" class="field"></semantic-select>
+                <semantic-select [optionAsync]="false" [optionLabel]="" [options]="months" [option]="month"
+                                 (optionOut)="receiverMonth($event)" class="field"></semantic-select>
+                <semantic-select [optionAsync]="false" [optionLabel]="" [options]="days" [option]="day"
+                                 (optionOut)="receiverDay($event)" class="field"></semantic-select>
+            </div>
+        </div>
+    </div>
+
+    <div class="fields">
+        <div class="four wide field">
+            <label>星级</label>
+            <input type="text" [(ngModel)]="player.star" name="star">
+        </div>
+        <div class="four wide field">
+            <label>等级</label>
+            <input type="text" [(ngModel)]="player.level" name="level" disabled>
+        </div>
+        <semantic-select [optionAsync]="false" [optionLabel]="'球员类型'" [options]="types" [option]="player.type"
+                         (optionOut)="receiverType($event)" class="four wide field"></semantic-select>
+        <semantic-select [optionAsync]="false" [optionLabel]="'球员标签'" [options]="tags" [option]="player.tag"
+                         (optionOut)="receiverTag($event)" class="four wide field"></semantic-select>
+    </div>
+
+    <div class="field">
+        <semantic-select [optionAsync]="true" [optionLabel]="'俱乐部'" [options]="clubs" [option]="player.club"
+                         (optionOut)="receiverClub($event)" class="four wide field"></semantic-select>
+    </div>
+
+
+    <h4 class="ui dividing header">球员能力</h4>
+
+    <div *ngFor=""></div>
+
+    <h5 class="ui dividing header">{{player.ability.attacking.name}}</h5>
+    <div class="fields">
+        <div class="field">
+            <label>{{player.ability.attacking.property.crossing.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.attacking.property.crossing.value" name="crossing">
+        </div>
+        <div class="field">
+            <label>{{player.ability.attacking.property.finishing.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.attacking.property.finishing.value" name="finishing">
+        </div>
+        <div class="field">
+            <label>{{player.ability.attacking.property.heading.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.attacking.property.heading.value" name="heading">
+        </div>
+        <div class="field">
+            <label>{{player.ability.attacking.property.shortPassing.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.attacking.property.shortPassing.value" name="shortPassing">
+        </div>
+        <div class="field">
+            <label>{{player.ability.attacking.property.volleys.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.attacking.property.volleys.value" name="volleys">
+        </div>
+    </div>
+
+    <h5 class="ui dividing header">{{player.ability.skill.name}}</h5>
+    <div class="fields">
+        <div class="field">
+            <label>{{player.ability.skill.property.dribbling.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.skill.property.dribbling.value" name="dribbling">
+        </div>
+        <div class="field">
+            <label>{{player.ability.skill.property.curve.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.skill.property.curve.value" name="curve">
+        </div>
+        <div class="field">
+            <label>{{player.ability.skill.property.freeKick.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.skill.property.freeKick.value" name="freeKick">
+        </div>
+        <div class="field">
+            <label>{{player.ability.skill.property.longPassing.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.skill.property.longPassing.value" name="longPassing">
+        </div>
+        <div class="field">
+            <label>{{player.ability.skill.property.ballControl.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.skill.property.ballControl.value" name="ballControl">
+        </div>
+    </div>
+
+    <h5 class="ui dividing header">{{player.ability.movement.name}}</h5>
+    <div class="fields">
+        <div class="field">
+            <label>{{player.ability.movement.property.acceleration.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.movement.property.acceleration.value" name="acceleration">
+        </div>
+        <div class="field">
+            <label>{{player.ability.movement.property.sprintSpeed.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.movement.property.sprintSpeed.value" name="sprintSpeed">
+        </div>
+        <div class="field">
+            <label>{{player.ability.movement.property.agility.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.movement.property.agility.value" name="agility">
+        </div>
+        <div class="field">
+            <label>{{player.ability.movement.property.reactions.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.movement.property.reactions.value" name="reactions">
+        </div>
+        <div class="field">
+            <label>{{player.ability.movement.property.balance.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.movement.property.balance.value" name="balance">
+        </div>
+    </div>
+
+    <h5 class="ui dividing header">{{player.ability.power.name}}</h5>
+    <div class="fields">
+        <div class="field">
+            <label>{{player.ability.power.property.shotPower.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.power.property.shotPower.value" name="shotPower">
+        </div>
+        <div class="field">
+            <label>{{player.ability.power.property.jumping.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.power.property.jumping.value" name="jumping">
+        </div>
+        <div class="field">
+            <label>{{player.ability.power.property.stamina.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.power.property.stamina.value" name="stamina">
+        </div>
+        <div class="field">
+            <label>{{player.ability.power.property.strength.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.power.property.strength.value" name="strength">
+        </div>
+        <div class="field">
+            <label>{{player.ability.power.property.longShots.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.power.property.longShots.value" name="longShots">
+        </div>
+    </div>
+
+    <h5 class="ui dividing header">{{player.ability.mentality.name}}</h5>
+    <div class="fields">
+        <div class="field">
+            <label>{{player.ability.mentality.property.aggression.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.mentality.property.aggression.value" name="aggression">
+        </div>
+        <div class="field">
+            <label>{{player.ability.mentality.property.interceptions.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.mentality.property.interceptions.value" name="interceptions">
+        </div>
+        <div class="field">
+            <label>{{player.ability.mentality.property.positioning.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.mentality.property.positioning.value" name="positioning">
+        </div>
+        <div class="field">
+            <label>{{player.ability.mentality.property.vision.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.mentality.property.vision.value" name="vision">
+        </div>
+        <div class="field">
+            <label>{{player.ability.mentality.property.penalties.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.mentality.property.penalties.value" name="penalties">
+        </div>
+        <div class="field">
+            <label>{{player.ability.mentality.property.composure.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.mentality.property.composure.value" name="composure">
+        </div>
+    </div>
+
+    <h5 class="ui dividing header">{{player.ability.defending.name}}</h5>
+    <div class="fields">
+        <div class="field">
+            <label>{{player.ability.defending.property.marking.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.defending.property.marking.value" name="aggression">
+        </div>
+        <div class="field">
+            <label>{{player.ability.defending.property.standingTackle.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.defending.property.standingTackle.value" name="interceptions">
+        </div>
+        <div class="field">
+            <label>{{player.ability.defending.property.slidingTackle.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.defending.property.slidingTackle.value" name="positioning">
+        </div>
+    </div>
+
+    <h5 class="ui dividing header">{{player.ability.goalkeeping.name}}</h5>
+    <div class="fields">
+        <div class="field">
+            <label>{{player.ability.goalkeeping.property.diving.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.goalkeeping.property.diving.value" name="aggression">
+        </div>
+        <div class="field">
+            <label>{{player.ability.goalkeeping.property.handling.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.goalkeeping.property.handling.value" name="interceptions">
+        </div>
+        <div class="field">
+            <label>{{player.ability.goalkeeping.property.kicking.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.goalkeeping.property.kicking.value" name="positioning">
+        </div>
+        <div class="field">
+            <label>{{player.ability.goalkeeping.property.positioning.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.goalkeeping.property.positioning.value" name="positioning">
+        </div>
+        <div class="field">
+            <label>{{player.ability.goalkeeping.property.reflexes.name}}</label>
+            <input type="number" [(ngModel)]="player.ability.goalkeeping.property.reflexes.value" name="positioning">
+        </div>
+    </div>
+
+    <button type="submit">Add</button>
+</form>

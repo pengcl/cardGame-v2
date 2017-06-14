@@ -5,8 +5,8 @@ import {CountryDetailsComponent} from './pages/countries/country-details/country
 import {CountryFormComponent} from './pages/countries/country-form/country-form.component';
 import {ClubsListComponent} from './pages/clubs/clubs-list/clubs-list.component';
 import {ClubDetailsComponent} from './pages/clubs/club-details/club-details.component';
-import {PlayersListComponent} from './players/players-list/players-list.component';
-import {PlayerDetailsComponent} from './players/player-details/player-details.component';
+import {PlayersListComponent} from './pages/players/players-list/players-list.component';
+import {PlayerDetailsComponent} from './pages/players/player-details/player-details.component';
 import {PartyDetailsComponent} from './parties/party-details.component';
 
 

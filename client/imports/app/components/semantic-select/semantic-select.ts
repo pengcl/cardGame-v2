@@ -20,7 +20,6 @@ export class SemanticSelectComponent {
     showOptionClass: boolean = false;
 
     constructor() {
-        console.log(this.options);
     }
 
     showOption() {

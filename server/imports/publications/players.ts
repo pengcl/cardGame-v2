@@ -28,7 +28,7 @@ function buildQuery(playerId?: string): Object {
 
         return {
 
-            // only single party
+            // only single player
 
             $and: [{
 

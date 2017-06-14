@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
-import {Players} from '../../../../../both/collections/players.collection';
+import {Players} from '../../../../../../both/collections/players.collection';
 import {InjectUser} from "angular2-meteor-accounts-ui";
 import template from './players-form.component.html';
 

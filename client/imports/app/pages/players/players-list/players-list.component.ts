@@ -4,8 +4,8 @@ import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 import {MeteorObservable} from 'meteor-rxjs';
 
-import {Players} from '../../../../../both/collections/players.collection';
-import {Player} from '../../../../../both/models/player.model';
+import {Players} from '../../../../../../both/collections/players.collection';
+import {Player} from '../../../../../../both/models/player.model';
 
 import template from './players-list.component.html';
 
