@@ -1,25 +1,49 @@
 import {Route} from '@angular/router';
 
-import {CountriesListComponent} from './pages/countries/countries-list/countries-list.component';
-import {CountryDetailsComponent} from './pages/countries/country-details/country-details.component';
-import {CountryFormComponent} from './pages/countries/country-form/country-form.component';
-import {ClubsListComponent} from './pages/clubs/clubs-list/clubs-list.component';
-import {ClubDetailsComponent} from './pages/clubs/club-details/club-details.component';
-import {PlayersListComponent} from './pages/players/players-list/players-list.component';
-import {PlayerDetailsComponent} from './pages/players/player-details/player-details.component';
-import {PartyDetailsComponent} from './parties/party-details.component';
+import {FrontComponent} from './front/front.component';
+import {FrontHomeComponent} from './front/pages/home/home.component';
 
+import {AdminComponent} from './admin/admin.component';
+import {AdminCountriesListComponent} from './admin/pages/countries/countries-list/countries-list.component';
+import {AdminCountryDetailsComponent} from './admin/pages/countries/country-details/country-details.component';
+import {AdminCountryFormComponent} from './admin/pages/countries/country-form/country-form.component';
+import {AdminClubsListComponent} from './admin/pages/clubs/clubs-list/clubs-list.component';
+import {AdminClubDetailsComponent} from './admin/pages/clubs/club-details/club-details.component';
+import {AdminPlayersListComponent} from './admin/pages/players/players-list/players-list.component';
+import {AdminPlayerDetailsComponent} from './admin/pages/players/player-details/player-details.component';
+
+const appAdminRoutes: Route[] = [
+    {path: 'countries', component: AdminCountriesListComponent},
+    {path: 'country/:countryId', component: AdminCountryDetailsComponent},
+    {path: 'addCountry', component: AdminCountryFormComponent},
+    {path: 'clubs', component: AdminClubsListComponent},
+    {path: 'club/:clubId', component: AdminClubDetailsComponent},
+    {path: 'players', component: AdminPlayersListComponent},
+    {path: 'player/:playerId', component: AdminPlayerDetailsComponent},
+    // 如果地址栏中输入没有定义的路由就跳转到one路由界面
+    {
+        path: '**', redirectTo: "players"
+    }
+];
+
+const appFrontRoutes: Route[] = [
+    {path: 'home', component: FrontComponent},
+    {
+        path: '**', redirectTo: "home"
+    }
+];
 
 export const routes: Route[] = [
 
-    {path: '', component: PlayersListComponent},
-    {path: 'countries', component: CountriesListComponent},
-    {path: 'country/:countryId', component: CountryDetailsComponent},
-    {path: 'addCountry', component: CountryFormComponent},
-    {path: 'clubs', component: ClubsListComponent},
-    {path: 'club/:clubId', component: ClubDetailsComponent},
-    {path: 'players', component: PlayersListComponent},
-    {path: 'player/:playerId', component: PlayerDetailsComponent},
-    {path: 'party/:partyId', component: PartyDetailsComponent}
-
+    {path: '', component: FrontHomeComponent},
+    {
+        path: 'front',
+        component: FrontComponent,
+        children: appFrontRoutes
+    },
+    {
+        path: 'admin',
+        component: AdminComponent,
+        children: appAdminRoutes
+    }
 ];
